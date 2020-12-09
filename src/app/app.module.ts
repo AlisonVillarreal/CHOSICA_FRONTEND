@@ -7,6 +7,8 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { MenuComponent } from './components/template/menu/menu.component';
 import { LoginComponent } from './components/login/login.component';
 import { OrganoComponent } from './components/organo/organo.component';
+import { InformeComponent } from './components/informe/informe.component';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { OrganoComponent } from './components/organo/organo.component';
     FooterComponent,
     MenuComponent,
     LoginComponent,
-    OrganoComponent
+    OrganoComponent,
+    InformeComponent
   ],
   imports: [
     BrowserModule,
