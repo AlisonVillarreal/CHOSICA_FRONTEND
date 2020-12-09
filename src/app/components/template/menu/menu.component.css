@@ -1,8 +1,5 @@
 /*********************** Codigo Diego ***********************/
 
-
-/******* Cambia el color del fondo y letra *******/
-
 .pagina {
     height: 100%;
     width: 100%;
@@ -11,6 +8,11 @@
 .ajuste {
     width: 100%;
     height: 100%;
+}
+
+.logito {
+    width: 105px;
+    height: 30px;
 }
 
 .delimitador {
@@ -22,10 +24,13 @@
     height: 100%;
 }
 
+
+/******* Cambia el color del fondo y letra *******/
+
 .nav-side-menu {
     overflow: auto;
     font-family: verdana;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 200;
     background-color: #0C1446;
     position: fixed;
@@ -43,7 +48,7 @@
 
 .nav-side-menu .brand {
     background-color: #0e1655;
-    line-height: 60px;
+    line-height: 56.5px;
     display: block;
     text-align: center;
     font-size: 14px;
