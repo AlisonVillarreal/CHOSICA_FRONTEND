@@ -38,7 +38,7 @@
                                         <label for="select cargo">Cargo</label>
                                         <div class="input-group mb-3" style="margin-left: 55px; margin-top: -40px;">
                                             <div class="input-group-prepend">
-                                                <select class="form-control" [(ngModel)]="cargoModel"> <!--*ngFor="let cargos of cargo"-->
+                                                <select class="form-control"> <!--*ngFor="let cargos of cargo"-->
                                                     <option selected >Seleccionar el Cargo</option>
                                                     <option *ngFor="let cargos of cargo">{{cargos.NOMBRE}}</option>
                                                 </select>
