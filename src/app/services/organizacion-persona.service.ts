@@ -11,15 +11,16 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class OrganizacionPersonaService {
+
   private httpHeaders = new HttpHeaders({ 'Content-Type':'application/json'});
-  private organoUrl:string = 'http://localhost:9191/OrganizacionPersona';
+  private organoUrl:string = 'http://localhost:1144/OrganizacionPersona';
 
   constructor(private http: HttpClient, private router:Router) { }
 
   getLista():Observable<any>{
     return this.http.get(this.organoUrl+'/all').pipe(
       catchError(e =>{
-        this.router.navigate(['/OrganizacionPersona']);
+        this.router.navigate(['/organo']);
         console.error(e.error.mensaje);
         Swal.fire('Error al editar', e.error.mensaje, 'error');
         return throwError(e);

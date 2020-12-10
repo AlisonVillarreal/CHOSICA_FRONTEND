@@ -38,18 +38,10 @@
                                         <label for="select cargo">Cargo</label>
                                         <div class="input-group mb-3" style="margin-left: 55px; margin-top: -40px;">
                                             <div class="input-group-prepend">
-
-                                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Roleeeeeeees</button>
-                                                <div class="dropdown-menu">
-
-                                                    <a class="dropdown-item" href="#">Presidente</a>
-                                                    <a class="dropdown-item" href="#">Vicepresidente</a>
-                                                    <a class="dropdown-item" href="#">Secretaria</a>
-                                                    <a class="dropdown-item" href="#">Tesorero</a>
-                                                    <a class="dropdown-item" href="#">Fiscal</a>
-                                                    <a class="dropdown-item" href="#">Secretaria de Actas</a>
-
-                                                </div>
+                                                <select class="form-control" [(ngModel)]="cargoModel"> <!--*ngFor="let cargos of cargo"-->
+                                                    <option selected >Seleccionar el Cargo</option>
+                                                    <option *ngFor="let cargos of cargo">{{cargos.NOMBRE}}</option>
+                                                </select>
                                             </div>
 
                                         </div>

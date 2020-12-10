@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Cargo } from 'src/app/models/cargo';
+import { OrganizacionPersona } from 'src/app/models/organizacion-persona';
 import { CargoService } from 'src/app/services/cargo.service';
+import { OrganizacionPersonaService } from 'src/app/services/organizacion-persona.service';
 
 @Component({
   selector: 'app-organo',
@@ -9,20 +12,26 @@ import { CargoService } from 'src/app/services/cargo.service';
 })
 export class OrganoComponent implements OnInit {
 
-  constructor(private cargoservice: CargoService, private router: Router) { }
+  organo: any;
+  organoModel: OrganizacionPersona = new OrganizacionPersona();
+  cargo: any;
+  cargoModel: Cargo = new Cargo();
+
+  constructor(private cargoservice: CargoService,
+              private organoservice: OrganizacionPersonaService,
+              private router: Router) {}
 
   ngOnInit(): void {
-    this.listar();
-    }
-  listar(): void {
- 
-    this.cargoservice.getLista().subscribe(
-      (data) => {
-        console.log(data);
-        this.cargoservice = data[0]['CUR_CARGO'];
-        console.log("cargo ",  this.cargoservice);
-      }, (err) => {
-        console.log("Error en el listar-organo-component")
+    this.listarcargos();
+  }
+
+  listarcargos(): void{
+    this.cargoservice.getListarCargo().subscribe(
+      (datos)=>{
+        console.log(datos[0]['CUR_CARGO']);
+        this.cargo = datos[0]['CUR_CARGO'];
+      },(err)=>{
+        console.log("Error en el Organo listar")
       }
     )
   }

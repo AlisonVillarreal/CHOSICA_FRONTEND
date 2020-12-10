@@ -10,20 +10,20 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class CargoService {
-  private httpHeaders = new HttpHeaders({ 'Content-Type':'application/json'});
-  private cargoUrl:string = 'http://localhost:9191/Cargo';
 
+  private httpHeaders = new HttpHeaders({ 'Content-Type':'application/json'});
+  private cargoUrl:string = 'http://localhost:1144/Cargo';
 
   constructor(private http: HttpClient, private router:Router) { }
   
-  getLista():Observable<any>{
-    return this.http.get(this.cargoUrl+'/all').pipe(
+  getListarCargo():Observable<any>{
+    return this.http.get(this.cargoUrl+'/all2').pipe(
       catchError(e =>{
-        this.router.navigate(['/Cargo']);
+        this.router.navigate(['/organo']);
         console.error(e.error.mensaje);
-        Swal.fire('Error al editar', e.error.mensaje, 'error');
+        Swal.fire('Error al listar', e.error.mensaje, 'error');
         return throwError(e);
       })
-    );
+    )
   }
 }

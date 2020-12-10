@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +12,8 @@ import { OrganoComponent } from './components/organo/organo.component';
 import { InformeComponent } from './components/informe/informe.component';
 import { SolicitudRegistroComponent } from './components/solicitud-registro/solicitud-registro.component';
 import { CargoService } from './services/cargo.service';
-
+import { OrganizacionPersonaService } from './services/organizacion-persona.service';
+import { PersonaService } from './services/persona.service';
 
 @NgModule({
   declarations: [
@@ -24,9 +27,14 @@ import { CargoService } from './services/cargo.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [CargoService],
+  providers: [CargoService,
+              OrganizacionPersonaService,
+              PersonaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
