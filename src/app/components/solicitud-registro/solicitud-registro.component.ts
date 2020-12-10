@@ -12,4 +12,7 @@ export class SolicitudRegistroComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  listar(){
+    
+  }
 }
