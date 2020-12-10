@@ -17,13 +17,9 @@ import { SolicitudRegistroComponent } from './components/solicitud-registro/soli
     FooterComponent,
     MenuComponent,
     LoginComponent,
-<<<<<<< HEAD
     OrganoComponent,
-    InformeComponent
-=======
     InformeComponent,
     SolicitudRegistroComponent
->>>>>>> 0c193079a35cee6be1ce858f475590ab6574bf79
   ],
   imports: [
     BrowserModule,
