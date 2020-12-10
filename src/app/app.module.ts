@@ -9,6 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { OrganoComponent } from './components/organo/organo.component';
 import { InformeComponent } from './components/informe/informe.component';
 import { SolicitudRegistroComponent } from './components/solicitud-registro/solicitud-registro.component';
+import { CargoService } from './services/cargo.service';
 
 
 @NgModule({
@@ -17,19 +18,15 @@ import { SolicitudRegistroComponent } from './components/solicitud-registro/soli
     FooterComponent,
     MenuComponent,
     LoginComponent,
-<<<<<<< HEAD
     OrganoComponent,
-    InformeComponent
-=======
     InformeComponent,
     SolicitudRegistroComponent
->>>>>>> 0c193079a35cee6be1ce858f475590ab6574bf79
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CargoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
