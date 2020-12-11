@@ -1,24 +1,31 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/template/footer/footer.component';
+import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { MenuComponent } from './components/template/menu/menu.component';
-import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
+  ],
   declarations: [
     AppComponent,
     FooterComponent,
-    MenuComponent,
-    LoginComponent
+    MenuComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
+  
+  providers: [
+   {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi:true}
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
