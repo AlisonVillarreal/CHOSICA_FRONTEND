@@ -1,0 +1,145 @@
+<div class="delimitador">
+    <div>
+        <br>
+        <h3 id="t">ORGANO DIRECTIVO</h3><br>
+    </div>
+    <div class="card" style="width: 68rem; margin-left: 265px; height: 483px;">
+        <div class="card-body">
+            <div class="t2">
+                <h6>Nombre de organizacion:</h6><br>
+                <h6>Tipo de organizacion:</h6><br>
+                <h6>Denominacion:</h6>
+            </div>
+            <div class="fecha" style="width: 70px; margin-left: 600px; margin-top: -90px;">
+                <form style="width: 190px;">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Inicio</label>
+                        <input type="date" class="form-control" style="margin-top: -37px; margin-left: 50px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Fin</label>
+                        <input type="date" class="form-control" style="margin-top: -37px; margin-left: 50px;">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="card cuerpo tabla">
+            <div class="card-body" style="margin-left: 10px;margin-top: -320px;  height: 360px; width: 98%;">
+                <div class="card buscador">
+                    <div class="card-body" style=" height: 45x">
+                        <form>
+                            <div class="form-row align-items-center">
+
+
+                                <div class="col-auto">
+
+                                    <div class="select cargo">
+                                        <label for="select cargo">Cargo</label>
+                                        <div class="input-group mb-3" style="margin-left: 55px; margin-top: -40px;">
+                                            <div class="input-group-prepend">
+                                                <select class="form-control"> <!--*ngFor="let cargos of cargo"-->
+                                                    <option selected >Seleccionar el Cargo</option>
+                                                    <option *ngFor="let cargos of cargo">{{cargos.NOMBRE}}</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="select dni" style="margin-top: -55px; margin-left: 350px; margin-right: 120px;">
+
+                                            <div class="input-group-append">
+                                                <label for="input-group-append;" style="margin-right: 15px; margin-top: 10px;">DNI</label>
+                                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">12345678</button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#">Action</a>
+                                                    <a class="dropdown-item" href="#">Another action</a>
+                                                    <a class="dropdown-item" href="#">Something else here</a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-auto">
+                                    <div class="form-check mb-2" style="margin-right: 120px;">
+                                        <img src="D:\CHOSICA-APP\CHOSICA_FRONTEND\src\app\image\img.jpg" class="rounded mx-auto d-block" alt="...">
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+
+                                    <button type="submit" class="btn btn-primary mb-2">Agregar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">APELLIDOS</th>
+                            <th scope="col">NOMBRE</th>
+                            <th scope="col">TIPO_DOC</th>
+                            <th scope="col">NUM_DOC</th>
+                            <th scope="col">EST_CIVIL</th>
+                            <th scope="col">CARGO</th>
+                            <th scope="col">TELEFONO</th>
+                            <th scope="col">ELIMINAR</th>
+                            <th scope="col">EDITAR</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Villarreal</td>
+                            <td>Alison</td>
+                            <td>DNI</td>
+                            <td>75942234</td>
+                            <td>Soltera</td>
+                            <td>Teso</td>
+                            <td>992045037</td>
+                            <td>aliQgma</td>
+                            <td>estrellas</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Alison</td>
+                            <td>Thornton</td>
+                            <td>Carol</td>
+                            <td>@twitter</td>
+                            <td>Mark</td>
+                            <td>Mark</td>
+                            <td>Mark</td>
+                            <td>Mark</td>
+                            <td>Mark</td>
+
+
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>DNI</td>
+                            <td>DNI</td>
+                            <td>DNI</td>
+                            <td>@twitter</td>
+                            <td>Mark</td>
+                            <td>Mark</td>
+                            <td>Mark</td>
+                            <td>Mark</td>
+                            <td>Mark</td>
+
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>

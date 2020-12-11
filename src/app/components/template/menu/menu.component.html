@@ -9,46 +9,46 @@
                 <ul id="menu-content" class="menu-content collapse out">
                     <li>
                         <a href="#">
-                            <i class="fa fa-dashboard fa-lg"></i> Inicio
+                            <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-home" aria-hidden="true"></i> Inicio
                         </a>
                     </li>
 
                     <li data-toggle="collapse" data-target="#products" class="collapsed active">
-                        <a href="#"><i class="fa fa-gift fa-lg"></i> Registros <span class="arrow"></span></a>
+                        <a href="#"><i class="fa fa-address-card-o" aria-hidden="true"></i> Solicitud de<span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="products">
                         <li class="active"><a href="#">CSS3 Animation</a></li>
-                        <li><a href="#">General</a></li>
-                        <li><a href="#">Buttons</a></li>
-                        <li><a href="#">Tabs & Accordions</a></li>
-                        <li><a href="#">Typography</a></li>
-                        <li><a href="#">FontAwesome</a></li>
-                        <li><a href="#">Slider</a></li>
-                        <li><a href="#">Panels</a></li>
-                        <li><a href="#">Widgets</a></li>
-                        <li><a href="#">Bootstrap Model</a></li>
+                        <li><a routerLink="solicitud-registro" href="#">Registro de Organización</a></li>
                     </ul>
 
-
                     <li data-toggle="collapse" data-target="#service" class="collapsed">
-                        <a href="#"><i class="fa fa-globe fa-lg"></i> Listas <span class="arrow"></span></a>
+                        <a href="#"><i class="fa fa-globe fa-lg"></i> Listas de<span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="service">
-                        <li>New Service 1</li>
-                        <li>New Service 2</li>
-                        <li>New Service 3</li>
+                        <li>Organizaciones</li>
+                        <li routerLink="organo">Organos Directivos</li>
+                        <li>Integrantes de la Organización</li>
                     </ul>
 
 
                     <li data-toggle="collapse" data-target="#new" class="collapsed">
-                        <a href="#"><i class="fa fa-car fa-lg"></i> New <span class="arrow"></span></a>
+                        <a href="#"><i class="fa fa-file" aria-hidden="true"></i> Registrar <span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="new">
-                        <li>New New 1</li>
-                        <li>New New 2</li>
-                        <li>New New 3</li>
+                        <li>Nueva Organización</li>
                     </ul>
 
+                    <li class="nav-item" routerLinkActive="active">
+                        <a href="#" routerLink="/informe">
+                            <i class="fa fa-archive fa-lg"></i> Bandeja de Entrada
+                        </a>
+                    </li>
 
                     <li>
                         <a href="#">
@@ -77,21 +77,29 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="navbar-brand text-white">
-                    <img src="/src/app/image/logo.png" width="105" height="30" class="d-inline-block align-top" alt=""> Perfil
+                <a class="text-hide" style="background-image: url('/src/app/image/logo.png'); width: 105px; height: 30px;">
+
                 </a>
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <ul class="navbar-nav" style="padding-left: 180px;">
                     <li class="nav-item active ">
-                        <a class="nav-link text-white">Configuración <span class="sr-only">(current)</span></a>
+                        <a class="nav-link text-white" href="#"><i class="fa fa-address-book-o" aria-hidden="true"></i> Perfil <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="padding-left: 20px;">
+                    <li class="nav-item active ">
+                        <a class="nav-link text-white" href="#"><i class="fa fa-cogs" aria-hidden="true"></i> Configuración<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
                 <form class="form-inline">
-                    <a class="text-white">Usuario  <i class="fa fa-user" aria-hidden="true"></i></a>
+                    <a class="nav-link text-white" href="#">Usuario  <i class="fa fa-user" aria-hidden="true"><span class="sr-only">(current)</span></i></a>
                 </form>
             </div>
         </nav>
     </div>
+<<<<<<< HEAD
     <div class="delimitador">
         
     </div>
+=======
+>>>>>>> 3eb959f1f38fe092a3959585da857fb2e1d853e3
 </div>
