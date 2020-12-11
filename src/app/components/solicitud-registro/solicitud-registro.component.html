@@ -13,21 +13,17 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputdenominacion">Tipo de Denominación</label>
+                <label for="inputdenominacion">Tipo de Organización</label>
                 <select class="custom-select " id="inputdenominacion">
-                <option selected>Denominaciones</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option selected>Organizaciones</option>
+                <option *ngFor="let tipos of tiporganizacion">{{tipos.NOMBRE}}</option>
               </select>
             </div>
             <div class="form-group col-md-6">
-                <label for="inputorganizacion">Tipo de Organización</label>
+                <label for="inputorganizacion">Tipo de Denominación</label>
                 <select class="custom-select " id="inputorganizacion">
-                <option selected>Organizaciones</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option selected>Denominaciones</option>
+                <option *ngFor="let denominacion of tipodenominacion">{{denominacion.NOMBRE}}</option>
               </select>
             </div>
         </div>

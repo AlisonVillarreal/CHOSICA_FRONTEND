@@ -19,7 +19,6 @@ export class CargoService {
   getListarCargo():Observable<any>{
     return this.http.get(this.cargoUrl+'/all2').pipe(
       catchError(e =>{
-        this.router.navigate(['/organo']);
         console.error(e.error.mensaje);
         Swal.fire('Error al listar', e.error.mensaje, 'error');
         return throwError(e);
