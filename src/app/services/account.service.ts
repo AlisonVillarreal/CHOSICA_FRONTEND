@@ -37,7 +37,7 @@ private _token: string;
   registro(params: any) {
     return this.http.post(`${environment.apiUrl}/usuarios/registro`, params);
   }
-  //Usa otro header, propio del server
+  //Logeo | Usa otro header, propio del server
   login(usuario: string, clave: string): Observable<any> {
     const loginEndpoint = `${environment.apiUrl}/oauth/token`;
     const credenciales = btoa('angularapp' + ':' + '1234567');
