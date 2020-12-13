@@ -21,12 +21,12 @@ import { OrganizacionPersonaService } from './services/organizacion-persona.serv
 import { PersonaService } from './services/persona.service';
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
+
+  imports: [BrowserModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
