@@ -1,5 +1,5 @@
- <h1>Users</h1>
-<a routerLink="add" class="btn btn-sm btn-success mb-2">Add User</a>
+ <h1>Usuarios</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">+ Nuevo</a>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -16,11 +16,11 @@
             <td>{{usuario.ROL}}</td>
             <td>{{usuario.ESTADO}}</td>
             <td style="white-space: nowrap">
-                <a routerLink="edit/{{usuario.ID}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+                <a routerLink="edit/{{usuario.ID}}" class="btn btn-sm btn-primary mr-1">Editar</a>
                 <button (click)="deleteUser(usuario.ID)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="usuario.isDeleting">
                    <!-- <span *ngIf="usuario.isDeleting" class="spinner-border spinner-border-sm"></span>
                     <span *ngIf="!usuario.isDeleting"></span> -->
-                    Delete</button>
+                    Eliminar</button>
             </td>
         </tr>
         <tr *ngIf="!usuarios">
