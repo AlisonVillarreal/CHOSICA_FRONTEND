@@ -1,36 +1,48 @@
-import { BrowserModule } from '@angular/platform-browser';
+//Import base
 import { NgModule } from '@angular/core';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+//Interceptor de jwt y verificación de auth
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './_helpers/jwt.interceptor';
+
+//Import de componente general
 import { AppComponent } from './app.component';
-import { FooterComponent } from './components/template/footer/footer.component';
 import { MenuComponent } from './components/template/menu/menu.component';
-import { LoginComponent } from './components/login/login.component';
+import { FooterComponent } from './components/template/footer/footer.component';
+
+//Import que se enviaran a modulo independiente
 import { OrganoComponent } from './components/organo/organo.component';
 import { InformeComponent } from './components/informe/informe.component';
 import { SolicitudRegistroComponent } from './components/solicitud-registro/solicitud-registro.component';
-import { RevisarSolicitudComponent } from './components/revisar-solicitud/revisar-solicitud.component';
-
+import { CargoService } from './services/cargo.service';
+import { OrganizacionPersonaService } from './services/organizacion-persona.service';
+import { PersonaService } from './services/persona.service';
 
 @NgModule({
+
+  imports: [BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
   declarations: [
     AppComponent,
     FooterComponent,
     MenuComponent,
-    LoginComponent,
-
     OrganoComponent,
     InformeComponent,
-    InformeComponent,
-    SolicitudRegistroComponent,
-    RevisarSolicitudComponent
-
+    SolicitudRegistroComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
+  
+  providers: [
+    CargoService,
+    OrganizacionPersonaService,
+    PersonaService,
+   {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi:true}
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

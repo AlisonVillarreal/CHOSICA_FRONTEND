@@ -1,0 +1,134 @@
+<div class="card">
+    <h4 class="card-header">Registro de datos personales</h4>
+    <div class="card-body">
+        <form [formGroup] = "form" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            </div>
+                        <input formControlName="apepat" type="text" placeholder = "Apellido Paterno" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.apepat.errors }" />
+                        <div *ngIf="submitted && f.apepat.errors" class="invalid-feedback">
+                            <div *ngIf="f.apepat.errors.required">Campo requerido</div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            </div>
+                        <input type="text" formControlName="apemat" placeholder = "Apellido Materno"class="form-control" [ngClass]="{ 'is-invalid': submitted && f.apemat.errors }" />
+                        <div *ngIf="submitted && f.apemat.errors" class="invalid-feedback">
+                            <div *ngIf="f.apemat.errors.required">Campo requerido</div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            </div>
+                        <input type="text" formControlName="nombres" placeholder="Nombres" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nombres.errors }" />
+                        <div *ngIf="submitted && f.nombres.errors" class="invalid-feedback">
+                            <div *ngIf="f.nombres.errors.required">Campo requerido</div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-address-card"></i></span>
+                            </div>
+                        <select class="form-control" formControlName="id_tipodoc" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id_tipodoc.errors }">
+                            <option value = "1" >Documento Nacional de Identidad</option>
+                        </select>
+                        <div *ngIf="submitted && f.id_tipodoc.errors" class="invalid-feedback">
+                            <div *ngIf="f.id_tipodoc.errors.required">Campo requerido</div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-address-card"></i></span>
+                            </div>
+                        <input type="text" formControlName="numero_doc" placeholder="N° Documento" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.numero_doc.errors }" />
+                        <div *ngIf="submitted && f.numero_doc.errors" class="invalid-feedback">
+                            <div *ngIf="f.numero_doc.errors.required">Campo requerido</div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        <input type="date" formControlName="fec_nac" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fec_nac.errors }" />
+                        <div *ngIf="submitted && f.fec_nac.errors" class="invalid-feedback">
+                            <div *ngIf="f.fec_nac.errors.required">Campo requerido</div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-home"></i></span>
+                            </div>
+                        <input type="text" formControlName="direccion" placeholder="Dirección" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.direccion.errors }" />
+                        <div *ngIf="submitted && f.direccion.errors" class="invalid-feedback">
+                            <div *ngIf="f.direccion.errors.required">Campo requerido</div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                            </div>
+                        <input type="text" formControlName="telefono" placeholder="Teléfono" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.telefono.errors }" />
+                        <div *ngIf="submitted && f.telefono.errors" class="invalid-feedback">
+                            <div *ngIf="f.telefono.errors.required">Campo requerido</div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                            </div>
+                        <input type="text" formControlName="correo" placeholder="Correo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.correo.errors }" />
+                        <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
+                            <div *ngIf="f.correo.errors.required">Campo requerido</div>
+                            <div *ngIf="f.correo.errors.pattern">Formato de correo incorreo</div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-key"></i></span>
+                            </div>
+                        <input type="password" formControlName="clave" placeholder="Contraseña" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.clave.errors }" />
+                        <div *ngIf="submitted && f.clave.errors" class="invalid-feedback">
+                            <div *ngIf="f.clave.errors.required">Password is required</div>
+                            <div *ngIf="f.clave.errors.minlength">Password must be at least 6 characters</div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button [disabled]="loading" class="btn btn-primary">
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                            Registrar
+                        </button>
+                         <a routerLink="../login" class="btn btn-link">Cancelar</a> 
+                    </div>
+                </div>
+            </div>           
+        </form>
+    </div>
+</div>

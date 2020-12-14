@@ -1,0 +1,48 @@
+<h1 *ngIf="isAddMode">Nuevo usuario</h1>
+<h1 *ngIf="!isAddMode">Editar usuario</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="col-md-6">
+            <div class="form-group">
+            <label for="nombre">Nombre del Usuario</label>
+                <input formControlName="nombre" type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" />
+                <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+                    <div *ngIf="f.nombre.errors.required">Campo requerido</div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="usuario">Usuario </label>
+                <input type="text" formControlName="usuario" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.usuario.errors }" />
+                <div *ngIf="submitted && f.usuario.errors" class="invalid-feedback">
+                    <div *ngIf="f.usuario.errors.required">Campo requerido</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="clave">Clave</label>
+                <input type="password" formControlName="clave" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.clave.errors }" />
+                <div *ngIf="submitted && f.clave.errors" class="invalid-feedback">
+                    <div *ngIf="f.clave.errors.required">Password is required</div>
+                    <div *ngIf="f.clave.errors.minlength">Password must be at least 6 characters</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="id_rol">Rol</label>
+                <Select ngDefaultControl  formControlName="id_rol" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id_rol.errors }">
+                    <option [value] = "rol.ID_ROL" *ngFor="let rol of roles">{{rol.NOMBRE}}</option>
+                </Select>
+                <div *ngIf="submitted && f.id_rol.errors" class="invalid-feedback">
+                    <div *ngIf="f.id_rol.errors.required">Campo requerido</div>
+                </div>
+            </div>
+
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Save
+        </button>
+        <a routerLink="/users" class="btn btn-link">Cancel</a>
+    </div>
+    </div>
+</form>

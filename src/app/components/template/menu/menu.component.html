@@ -34,7 +34,7 @@
                     <ul class="sub-menu collapse" id="service">
                         <li><a routerLink="revisar-solicitud" href="#">Solicitudes</a></li>
                         <li>Organizaciones</li>
-                        <li>Organos Directivos</li>
+                        <li routerLink="organo">Organos Directivos</li>
                         <li>Integrantes de la Organización</li>
                     </ul>
 
@@ -59,8 +59,13 @@
                     </li>
 
                     <li>
-                        <a href="#">
+                        <a href="/users">
                             <i class="fa fa-users fa-lg"></i> Users
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/" (click)="logout()">
+                            <i class="fa fa-users fa-lg"></i> Logout
                         </a>
                     </li>
                 </ul>
@@ -74,8 +79,8 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="text-hide" style="background-image: url('/src/app/image/logo.png'); width: 105px; height: 30px;">
-
+                <a class="text-hide" style="width: 105px; height: 30px;">
+                    <img src="https://drive.google.com/file/d/12JHJzyfrM5UVXLAspwD9KIjeoci7kH9C/view" alt="">
                 </a>
                 <ul class="navbar-nav" style="padding-left: 180px;">
                     <li class="nav-item active ">
@@ -93,8 +98,7 @@
             </div>
         </nav>
     </div>
-<<<<<<< HEAD
-    <div>
-=======
+    <div class="delimitador">
+
+    </div>
 </div>
->>>>>>> 0c193079a35cee6be1ce858f475590ab6574bf79
