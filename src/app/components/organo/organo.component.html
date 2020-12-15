@@ -39,9 +39,9 @@
                                         <label for="select cargo">Cargo</label>
                                         <div class="input-group mb-3" style="margin-left: 55px; margin-top: -40px;">
                                             <div class="input-group-prepend">
-                                                <select class="form-control"> <!--*ngFor="let cargos of cargo"-->
+                                                <select class="form-control" [(ngModel)]="id_cargo" name="id"> <!--*ngFor="let cargos of cargo"-->
                                                     <option selected >Seleccionar el Cargo</option>
-                                                    <option *ngFor="let cargos of cargo">{{cargos.NOMBRE}}</option>
+                                                    <option *ngFor="let cargos of cargo" [value] = "cargos.ID_CARGO">{{cargos.NOMBRE}}</option>
                                                 </select>
                                             </div>
 
@@ -49,15 +49,9 @@
 
                                         <div class="select dni" style="margin-top: -55px; margin-left: 350px; margin-right: 120px;">
 
-                                            <div class="input-group-append">
-                                                <label for="input-group-append;" style="margin-right: 15px; margin-top: 10px;">DNI</label>
-                                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">12345678</button>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#">Action</a>
-                                                    <a class="dropdown-item" href="#">Another action</a>
-                                                    <a class="dropdown-item" href="#">Something else here</a>
+                                            <div class="form-group col-md-8">
 
-                                                </div>
+                                                <input type="text" class="form-control" id="inputpartida" placeholder="DNI" [(ngModel)]="numero_doc" name="doc">
                                             </div>
                                         </div>
                                     </div>
@@ -70,7 +64,7 @@
                                 </div>
                                 <div class="col-auto">
 
-                                    <button type="submit" class="btn btn-primary mb-2">Agregar</button>
+                                    <button type="submit" class="btn btn-primary mb-2" (click)="updCargo()">Agregar</button>
                                 </div>
                             </div>
                         </form>
@@ -85,58 +79,32 @@
                             <th scope="col">TIPO_DOC</th>
                             <th scope="col">NUM_DOC</th>
                             <th scope="col">EST_CIVIL</th>
-                            <th scope="col">CARGO</th>
                             <th scope="col">TELEFONO</th>
                             <th scope="col">ELIMINAR</th>
                             <th scope="col">EDITAR</th>
 
-
-
                         </tr>
                     </thead>
+
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Villarreal</td>
-                            <td>Alison</td>
-                            <td>DNI</td>
-                            <td>75942234</td>
-                            <td>Soltera</td>
-                            <td>Teso</td>
-                            <td>992045037</td>
-                            <td>aliQgma</td>
-                            <td>estrellas</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Alison</td>
-                            <td>Thornton</td>
-                            <td>Carol</td>
-                            <td>@twitter</td>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Mark</td>
-
-
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>DNI</td>
-                            <td>DNI</td>
-                            <td>DNI</td>
-                            <td>@twitter</td>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Mark</td>
+                        <tr *ngFor="let lista of listapersonas; let i=index">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{lista.APEPAT}} {{lista.APEMAT}}</td>
+                            <td>{{lista.NOMBRES}}</td>
+                            <td>{{lista.NOMBRE}}</td>
+                            <td>{{lista.NUMERO_DOC}}</td>
+                            <td>{{lista.ESTACIVI}}</td>
+                            <td>{{lista.TELEFONO}}</td>
+                            <td><button type="button" class="btn btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></button ></td>
+                            <td><button  type="button" class="btn btn-outline-secondary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></td>
 
                         </tr>
 
 
                     </tbody>
+                    <div>
+                        <input class="btn btn-primary" type="button" value=" Enviar">
+                    </div>
                 </table>
             </div>
 
