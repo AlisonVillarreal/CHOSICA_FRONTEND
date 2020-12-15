@@ -8,7 +8,6 @@ import { ListComponent } from './list/list.component';
 import { AddEditComponent } from './add-edit/add-edit.component';
 
 
-
 @NgModule({
   imports: [
     CommonModule,

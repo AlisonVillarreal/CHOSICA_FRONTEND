@@ -21,11 +21,18 @@ private usuariosURL:string = `${environment.apiUrl}/usuarios`;
       
     ) { 
       this._token = sessionStorage.getItem('token');
+      this._usuario = JSON.parse(sessionStorage.getItem('user')) as Usuario;
     }
   
   public get tokenValue(): any{
     if (this._token) {
       return this._token
+    }
+    return null;
+  }
+  public get userValue(): any{
+    if (this._usuario) {
+      return this._usuario
     }
     return null;
   }
@@ -84,6 +91,7 @@ private usuariosURL:string = `${environment.apiUrl}/usuarios`;
     this._usuario = new Usuario(); 
     this._usuario.id_usuario = payload.iduser;
     this._usuario.usuario = payload.user;
+    this._usuario.nombre = payload.nombre;
     this._usuario.rol = payload.authorities;
     this._usuario.grupos = payload.grupos;
     this._usuario.accesos = payload.accesos;  
@@ -92,7 +100,7 @@ private usuariosURL:string = `${environment.apiUrl}/usuarios`;
   }
   guadarToken(accesToken: string):void{
     this._token = accesToken;
-    sessionStorage.setItem('token',accesToken);
+    sessionStorage.setItem('token',this._token);
   }
   obtenerDatosToken(accessToken:string):any{
     if(accessToken!=null){
@@ -100,5 +108,13 @@ private usuariosURL:string = `${environment.apiUrl}/usuarios`;
     }
     return null;
   }
-
+  getuser(): Usuario{
+    return this._usuario;
+  }
+  hasRole(role: string): boolean {
+    if (this._usuario.rol === role) {
+      return true;
+    }
+    return false;
+  }
 }
