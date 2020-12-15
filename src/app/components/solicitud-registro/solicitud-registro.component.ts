@@ -64,8 +64,8 @@ export class SolicitudRegistroComponent implements OnInit {
 
   agregarSolicitud(): void{
 
-    this.solicitudOrganizacion.crearArchivo(this.archivitos).subscribe();
-    /* this.usuario = this.usuarioService.getuser();
+    /* this.solicitudOrganizacion.crearArchivo(this.archivitos).subscribe(); */
+    this.usuario = this.usuarioService.getuser();
     var fecha = this.solicitudModel.fec_iniactv.split("-");
     this.solicitudModel.fec_iniactv = fecha[2] + "/" + fecha [1] + "/" + fecha [0];
     console.log(this.solicitudModel.fec_iniactv);
@@ -78,6 +78,6 @@ export class SolicitudRegistroComponent implements OnInit {
           text: 'Tu Solicitud de Organización a sido enviada correctamente'
         })
       }
-    ) */
+    )
   } 
 }
