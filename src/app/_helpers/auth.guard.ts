@@ -13,6 +13,14 @@ export class AuthGuard implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         const token = this.accountService.tokenValue;
         if (token) {
+            try {
+                console.log(route.url[0]["path"]);
+                
+            } catch (error) {
+                console.log(error);
+                
+            }
+            
             // Hay un token registrado, por lo que devuelve verdadero.
             return true;
         }
