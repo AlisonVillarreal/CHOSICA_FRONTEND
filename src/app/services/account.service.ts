@@ -94,4 +94,7 @@ private _token: string;
     return null;
   }
 
+  getuser(): Usuario{
+    return this._usuario;
+  }
 }

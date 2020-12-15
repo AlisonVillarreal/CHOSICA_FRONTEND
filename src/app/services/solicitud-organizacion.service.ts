@@ -16,7 +16,15 @@ export class SolicitudOrganizacionService {
 
   constructor(private http: HttpClient, private router:Router) { }
   
-  addSolicitudOrganizacion(soli : Solicitud_Fucion): Observable<number>{
-    return this.http.post<number>(`${environment.apiUrl}/add`, soli);
+  addSolicitudOrganizacion(soli : any, id : number): Observable<number>{
+    soli.id_usuariosol = id;
+    return this.http.post<number>(`${environment.apiUrl}/solicitud/add`, soli);
+  }
+  crearArchivo(archivo: File): any{
+    const formData = new FormData();
+    const nombre = archivo.name;
+    formData.append("archivo", archivo);
+    formData.append("nombre", nombre);
+    return this.http.post(`${environment.apiUrl}/archivos/create`, formData)
   }
 }
