@@ -13,7 +13,7 @@ export class AccountService {
 
 private _usuario: Usuario;
 private _token: string;
-
+private usuariosURL:string = `${environment.apiUrl}/usuarios`;
   constructor
     (    
       private http: HttpClient,
@@ -21,6 +21,7 @@ private _token: string;
       
     ) { 
       this._token = sessionStorage.getItem('token');
+      this._usuario = JSON.parse(sessionStorage.getItem('user')) as Usuario;
     }
   
   public get tokenValue(): any{
@@ -29,13 +30,19 @@ private _token: string;
     }
     return null;
   }
+  public get userValue(): any{
+    if (this._usuario) {
+      return this._usuario
+    }
+    return null;
+  }
 
   //Registro de Usuario y Persona
   registrosol(params: any) {
-    return this.http.post(`${environment.apiUrl}/usuarios/registrosol`, params);
+    return this.http.post(this.usuariosURL + '/registrosol', params);
   }
   registro(params: any) {
-    return this.http.post(`${environment.apiUrl}/usuarios/registro`, params);
+    return this.http.post(this.usuariosURL + '/usuarios/registro', params);
   }
   //Logeo | Usa otro header, propio del server
   login(usuario: string, clave: string): Observable<any> {
@@ -58,34 +65,42 @@ private _token: string;
     this.router.navigate(['/account/login']);
   }
   getAllU(): Observable<any>{
-    return this.http.get(`${environment.apiUrl}/usuarios/lista`);
+    return this.http.get(this.usuariosURL + '/lista');
   }
   getAll(): Observable<any>{
-    return this.http.get(`${environment.apiUrl}/usuarios/lista`);
+    return this.http.get(this.usuariosURL + '/lista');
   }
   getById(id: number){
-    return this.http.get(`${environment.apiUrl}/usuarios/${id}`);
+    return this.http.get(`${this.usuariosURL}/${id}`);
   }
   getRoles(): Observable<Rol>{
     return this.http.get<Rol>(`${environment.apiUrl}/roles/listar`);
   } 
   delete(id: number){
-    return this.http.delete(`${environment.apiUrl}/usuarios/${id}`);
+    return this.http.delete(`${this.usuariosURL}/${id}`);
   }
   updUsuario(id: string, usuario: Usuario){
-    return this.http.put(`${environment.apiUrl}/usuarios/edit/${id}`, usuario);
+    return this.http.put(`${this.usuariosURL}/edit/${id}`, usuario);
+  }
+  activacion(id: string){
+    return this.http.get(`${this.usuariosURL}/activacion/${id}`);
   }
   //Funciones adicionales de token
   guadarUser(accesToken: string):void{
     let payload = this.obtenerDatosToken(accesToken);
     this._usuario = new Usuario(); 
     this._usuario.id_usuario = payload.iduser;
-    this._usuario.usuario = payload.user;  
+    this._usuario.usuario = payload.user;
+    this._usuario.nombre = payload.nombre;
+    this._usuario.rol = payload.authorities;
+    this._usuario.grupos = payload.grupos;
+    this._usuario.accesos = payload.accesos;  
+    
     sessionStorage.setItem('user',JSON.stringify(this._usuario));
   }
   guadarToken(accesToken: string):void{
     this._token = accesToken;
-    sessionStorage.setItem('token',accesToken);
+    sessionStorage.setItem('token',this._token);
   }
   obtenerDatosToken(accessToken:string):any{
     if(accessToken!=null){
@@ -93,8 +108,13 @@ private _token: string;
     }
     return null;
   }
-
   getuser(): Usuario{
     return this._usuario;
+  }
+  hasRole(role: string): boolean {
+    if (this._usuario.rol === role) {
+      return true;
+    }
+    return false;
   }
 }

@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 export class CargoService {
 
   private httpHeaders = new HttpHeaders({ 'Content-Type':'application/json'});
-  private cargoUrl:string = 'http://localhost:1144/Cargo';
+  private cargoUrl:string = `${environment.apiUrl}/Cargo`;
 
   constructor(private http: HttpClient, private router:Router) { }
   

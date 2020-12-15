@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
 import Swal from 'sweetalert2';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import Swal from 'sweetalert2';
 export class TipodenominacionService {
 
   private httpHeaders = new HttpHeaders({ 'Content-Type':'application/json'});
-  private tipodenominancionURL:String = 'http://localhost:1144/tipodenominaciones';
+  private tipodenominancionURL:String = `${environment.apiUrl}tipodenominaciones`;
 
   constructor(private http:HttpClient, private router:Router) {}
 

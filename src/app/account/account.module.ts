@@ -6,6 +6,7 @@ import { AccountRoutingModule } from './account-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { LayoutComponent } from './layout/layout.component';
   declarations: [
     LayoutComponent,
     LoginComponent, 
-    RegisterComponent
+    RegisterComponent, ConfirmationComponent
     ]
 })
 export class AccountModule { }

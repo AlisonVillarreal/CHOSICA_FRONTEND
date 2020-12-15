@@ -1,1 +1,53 @@
-<router-outlet></router-outlet>
+<div class="pagina">
+    <div *ngIf ="token"> 
+        <div class="ajuste">
+            <div class="nav-side-menu">
+                <div class="brand">Brand Logo</div>
+                <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+                <div class="menu-list">
+
+                    <ul id="menu-content" class="menu-content collapse out">
+                        <li><a href="#"> <i class="fa fa-home fa-lg" aria-hidden="true"></i>Inicio</a></li>
+
+                            <li *ngFor ="let opcion of opciones">
+                                <a routerLink ="{{opcion.URL}}">
+                                    <i class="{{opcion.ICONO}} fa-lg"></i>
+                                    {{opcion.NOMBRE}}
+                                </a>
+                            </li>
+                        <li><a href="/" (click)="logout()"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000C66; height: 55px;">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <a class="text-hide" style="width: 105px; height: 30px;">
+                        <img src="https://drive.google.com/file/d/12JHJzyfrM5UVXLAspwD9KIjeoci7kH9C/view" alt="">
+                    </a>
+                    <ul class="navbar-nav" style="padding-left: 180px;">
+                        <li class="nav-item active ">
+                            <a class="nav-link text-white" href="#"><i class="fa fa-address-book-o" aria-hidden="true"></i> Perfil <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="padding-left: 20px;">
+                        <li class="nav-item active ">
+                            <a class="nav-link text-white" href="#"><i class="fa fa-cogs" aria-hidden="true"></i> Configuración<span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                    <form class="form-inline">
+                        <a class="nav-link text-white" href="#">{{user.nombre}}  <i class="fa fa-user" aria-hidden="true"><span class="sr-only">(current)</span></i></a>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>
+
