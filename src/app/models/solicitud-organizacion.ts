@@ -19,5 +19,5 @@ export class Solicitud_Fucion{
     numpartreg: String;
     id_tipodeno: number;
     totalmiembros: number;
-    fec_iniactv: number;
+    fec_iniactv: String;
 }
