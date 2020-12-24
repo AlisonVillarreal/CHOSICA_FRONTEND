@@ -17,7 +17,7 @@ export class TipodenominacionService {
   constructor(private http:HttpClient, private router:Router) {}
 
 getListarTipoDenominaciones():Observable<any>{
-  return this.http.get(this.tipodenominancionURL+'/listar2').pipe(
+  return this.http.get(`${environment.apiUrl}/tipodenominaciones/listar2`).pipe(
     catchError(e =>{
       console.error(e.error.mensaje);
       Swal.fire('Error al listar', e.error.mensaje, 'error');
