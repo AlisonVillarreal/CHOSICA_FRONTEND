@@ -1,3 +1,11 @@
+#t {
+    margin-left: 150px;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 10px;
+    margin-top: -20px;
+}
+
 body {
     margin: 0px;
     padding: 0px;
@@ -8,12 +16,4 @@ body {
     margin-left: 10px;
     font-size: 2px;
     font-weight: 5px;
-}
-
-#t {
-    margin-left: 150px;
-    text-align: center;
-    padding-left: 100px;
-    padding-right: 10px;
-    margin-top: -20px;
 }

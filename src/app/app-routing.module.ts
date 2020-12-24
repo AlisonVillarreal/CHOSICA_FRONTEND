@@ -41,6 +41,7 @@ import { SolicitudRegistroComponent } from './components/solicitud-registro/soli
 import { OrganoComponent } from './components/organo/organo.component'
 import { InicioComponent } from './components/template/inicio/inicio.component';
 import { AuthGuard } from './_helpers/auth.guard';
+import { ListarComponent } from './components/organo/listar/listar.component';
 
 const accountModule = () => import('./account/account.module').then(x => x.AccountModule);
 const usersModule = () => import('./users/users.module').then(x => x.UsersModule);
@@ -55,7 +56,8 @@ const routes: Routes = [
   { path: 'informe', component: InformeComponent, canActivate: [AuthGuard], data:{role: ['ADMINISTRADOR', 'TECNICO ADMINISTRATIVO']}},
   { path: 'solicitud-registro', component: SolicitudRegistroComponent, canActivate: [AuthGuard], data:{role: ['ADMINISTRADOR', 'SOLICITANTE']}},
   { path: 'organo', component: OrganoComponent,canActivate: [AuthGuard], data:{role: ['ADMINISTRADOR', 'TECNICO ADMINISTRATIVO', 'SECRETARIA']}},
-//Redirección
+  { path: 'listarorgano', component: ListarComponent,canActivate: [AuthGuard], data:{role: ['ADMINISTRADOR', 'TECNICO ADMINISTRATIVO', 'SECRETARIA']}},
+    //Redirección
   { path: '**', redirectTo: '' }
   
 ];

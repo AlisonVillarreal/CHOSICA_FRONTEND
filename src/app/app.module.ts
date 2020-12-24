@@ -69,6 +69,7 @@ import { CargoService } from './services/cargo.service';
 import { OrganizacionPersonaService } from './services/organizacion-persona.service';
 import { PersonaService } from './services/persona.service';
 import { InicioComponent } from './components/template/inicio/inicio.component';
+import { ListarComponent } from './components/organo/listar/listar.component';
 
 @NgModule({
 
@@ -85,7 +86,8 @@ import { InicioComponent } from './components/template/inicio/inicio.component';
     OrganoComponent,
     InformeComponent,
     SolicitudRegistroComponent,
-    InicioComponent
+    InicioComponent,
+    ListarComponent
   ],
   
   providers: [
