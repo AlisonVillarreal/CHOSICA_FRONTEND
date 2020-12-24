@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { OrganizacionPersonaService } from 'src/app/services/organizacion-persona.service';
 import { Cargo } from 'src/app/models/cargo';
 import { CargoService } from 'src/app/services/cargo.service';
+import { OrganizacionPersona } from 'src/app/models/organizacion-persona';
 
 @Component({
   selector: 'app-listar',
@@ -13,7 +14,8 @@ export class ListarComponent implements OnInit {
   listarpersona: any;
   cargo:any;
   numero_doc: String; id_cargo: number;
-  
+  organoModel: OrganizacionPersona = new OrganizacionPersona();
+
   constructor(private organoservice: OrganizacionPersonaService, private cargoservice: CargoService,
     private router: Router ) { }
 
@@ -39,5 +41,9 @@ export class ListarComponent implements OnInit {
         console.log("Error en el Organo listar")
       }
     )
+  }
+  setorgano(alison:any){
+    this.organoModel.id_cargo = alison.ID_CARGO;
+    
   }
 }
