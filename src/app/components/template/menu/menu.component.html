@@ -7,15 +7,67 @@
             <div class="menu-list">
 
                 <ul id="menu-content" class="menu-content collapse out">
-                    <li><a href="#"> <i class="fa fa-home fa-lg" aria-hidden="true"></i>Inicio</a></li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+                        </a>
+                    </li>
 
-                        <li *ngFor ="let opcion of opciones">
-                            <a routerLink ="{{opcion.URL}}">
-                                <i class="{{opcion.ICONO}} fa-lg"></i>
-                                {{opcion.NOMBRE}}
-                            </a>
-                        </li>
-                    <li><a href="/" (click)="logout()"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-home" aria-hidden="true"></i> Inicio
+                        </a>
+                    </li>
+
+                    <li data-toggle="collapse" data-target="#products" class="collapsed active">
+                        <a href="#"><i class="fa fa-address-card-o" aria-hidden="true"></i> Solicitud de<span class="arrow"></span></a>
+                    </li>
+                    <ul class="sub-menu collapse" id="products">
+                        <li class="active"><a href="#">CSS3 Animation</a></li>
+                        <li><a routerLink="solicitud-registro" href="#">Registro de Organización</a></li>
+
+                    </ul>
+
+                    <li data-toggle="collapse" data-target="#service" class="collapsed" name="Listas">
+                        <a href="#"><i class="fa fa-globe fa-lg"></i> Listas de<span class="arrow"></span></a>
+                    </li>
+                    <ul class="sub-menu collapse" id="service">
+                        <li><a routerLink="revisar-solicitud" href="#">Solicitudes</a></li>
+                        <li>Organizaciones</li>
+                        <li routerLink="organo">Organos Directivos</li>
+                        <li>Integrantes de la Organización</li>
+                    </ul>
+
+
+                    <li data-toggle="collapse" data-target="#new" class="collapsed">
+                        <a href="#"><i class="fa fa-file" aria-hidden="true"></i> Registrar <span class="arrow"></span></a>
+                    </li>
+                    <ul class="sub-menu collapse" id="new">
+                        <li>Nueva Organización</li>
+                    </ul>
+
+                    <li class="nav-item" routerLinkActive="active">
+                        <a href="#" routerLink="/informe">
+                            <i class="fa fa-archive fa-lg"></i> Bandeja de Entrada
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-user fa-lg"></i> Profile
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/users">
+                            <i class="fa fa-users fa-lg"></i> Users
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/" (click)="logout()">
+                            <i class="fa fa-users fa-lg"></i> Logout
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
