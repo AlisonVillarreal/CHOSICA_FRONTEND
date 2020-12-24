@@ -46,4 +46,13 @@ export class OrganizacionPersonaService {
     );
   }
   
+  getalison():Observable<any>{
+    return this.http.get(environment.apiUrl +'/persona/listar3').pipe(
+      catchError(e =>{
+        console.error(e.error.mensaje);
+        Swal.fire('Error al buscar', e.error.mensaje, 'error');
+        return throwError(e);
+      })
+    );
+  }
 }

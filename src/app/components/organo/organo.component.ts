@@ -64,7 +64,7 @@ export class OrganoComponent implements OnInit {
       swal.fire({
         icon: 'success',
         title: 'Solicitud Enviada',
-        text: 'Tu Solicitud de Organización a sido enviada correctamente'
+        text: 'La persona se agrego correctamente'
       })}
     )
   }
